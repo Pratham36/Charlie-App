@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-charlie-cream text-charlie-ink font-sans antialiased;
+  }
+  * {
+    @apply border-gray-200;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-charlie-amber hover:bg-charlie-amber2 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-charlie-ink border border-gray-200 font-semibold px-4 py-2 rounded-lg transition-all duration-200;
+  }
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-200;
+  }
+  .card {
+    @apply bg-white border border-gray-100 rounded-xl p-5 shadow-sm;
+  }
+  .input {
+    @apply w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-charlie-amber focus:border-transparent transition-all;
+  }
+  .label {
+    @apply block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5;
+  }
+  .badge-green {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800;
+  }
+  .badge-amber {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-amber-100 text-amber-800;
+  }
+  .badge-red {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800;
+  }
+  .badge-blue {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #F5F5F0; }
+::-webkit-scrollbar-thumb { background: #C47A1A; border-radius: 2px; }
+
+/* Progress bar animation */
+@keyframes progress { from { width: 0; } }
+.progress-bar { animation: progress 0.8s ease-out; }
