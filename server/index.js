@@ -17,6 +17,8 @@ connectDB();
 // Connect database & initialize express app
 const app = express();
 
+app.set('trust proxy', 1);
+
 // Security middleware
 app.use(helmet());
 app.use(cors({
@@ -30,7 +32,7 @@ const limiter = rateLimit({
   max: process.env.NODE_ENV === 'production' ? 100 : 10000, // high limit for development
   message: 'Too many requests from this IP',
 });
-app.use('/api/', limiter);
+// app.use('/api/', limiter);
 
 // Body parsing
 app.use(express.json({ limit: '10mb' }));
